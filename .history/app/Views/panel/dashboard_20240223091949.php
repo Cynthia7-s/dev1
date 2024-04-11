@@ -1,1 +1,0 @@
-<?= $this->extend("plantillas/panel_base") ?>
