@@ -3,7 +3,7 @@
 // base_url(); : http://localhost:9
 ?>
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>

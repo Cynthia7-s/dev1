@@ -2,8 +2,7 @@
 //dd(base_url(RECURSOS_LOGIN_JS."/"))
 //base_url; : http://localhost:8080/
 ?>
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
   	<title>Login 04</title>
