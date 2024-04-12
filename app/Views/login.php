@@ -8,16 +8,10 @@
   <link href="style.css" rel="stylesheet" type="text/css" />
   <link href="/recursos_login/css/login.css" rel="stylesheet" type="text/css" />
 <script src="/recursos_login/js/login.js"></script>
-
-
-
 </head>
-
 <body>
- 
-
   <div class="container right-panel-active">
-    <!-- Sign Up -->
+    <!-- Administrador-->
     <div class="container__form container--signup">
       <form action="#" class="form" id="form1">
         <h2 class="form__title">Adminstrador</h2>
@@ -26,8 +20,7 @@
         <button class="btn">Iniciar</button>
       </form>
     </div>
-
-    <!-- Sign In -->
+    <!-- Profesor -->
     <div class="container__form container--signin">
       <form action="#" class="form" id="form2">
         <h2 class="form__title">Profesor</h2>
@@ -36,7 +29,6 @@
         <button class="btn">Iniciar</button>
       </form>
     </div>
-
     <!-- Overlay -->
     <div class="container__overlay">
       <div class="overlay">

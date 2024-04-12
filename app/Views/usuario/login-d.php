@@ -13,8 +13,9 @@
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	
-	<link rel="stylesheet" href=<?php echo base_url(RECURSOS_LOGIN_CSS. '/style.css')?>> 
-
+	<link rel="stylesheet" href=<?php echo base_url(RECURSOS_LOGIN_CSS. '/login.css')?>> 
+	<link href="style.css" rel="stylesheet" type="text/css" />
+<script src="/recursos_login/js/login.js"></script>
 	</head>
 	<body>
 	<section class="ftco-section">
@@ -41,7 +42,7 @@
 									</p>
 								</div>
 			      	</div>
-                      <?= form_open("ruta",["class" => "signin-form"] )?>
+                      <?= form_open('validar_usuario',["class" => ""] )?>
                      
                     
 							

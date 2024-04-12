@@ -39,6 +39,16 @@ $routes->get('/', 'Home::index');
 
 // View Example
 $routes->get('cero', 'Home::funcion_pro');
+//======================================================================================
+//RUTAS DE LOGIN 
+//========================================================================================
+
+$routes->get('administracion_acceso', 'Usuario\Login::index', ['as' => 'administracion_acceso']);
+$routes->post('validar_usuario','Usuario::funcion',["as"=>'validar_usuario']);
+//=====================================================================================
+
+
+
 
 // Login View Route
 $routes->get('login', 'Home::login');
