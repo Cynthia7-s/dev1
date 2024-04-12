@@ -7,6 +7,7 @@
 <html lang="en">
 
 <head>
+<<<<<<< Updated upstream
     <title>Login 04</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,10 +17,21 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="<?php echo base_url('recursos_login/css/style.css'); ?>">
+=======
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Iniciar sesion</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="/recursos_login/css/login.css" rel="stylesheet" type="text/css" />
+<script src="/recursos_login/js/login.js"></script>
+>>>>>>> Stashed changes
+
+
 
 </head>
 
 <body>
+<<<<<<< Updated upstream
     <section class="ftco-section">
         <div class="container">
             <div class="row justify-content-center">
@@ -103,6 +115,44 @@
     <script src="<?= base_url('recursos_login_JS/bootstrap.min.js') ?>"></script>
     <script src="<?= base_url('recursos_login_JS/main.js') ?>"></script>
 
+=======
+ 
+
+  <div class="container right-panel-active">
+    <!-- Sign Up -->
+    <div class="container__form container--signup">
+      <form action="#" class="form" id="form1">
+        <h2 class="form__title">Adminstrador</h2>
+        <input type="text" placeholder="User" class="input" />
+        <input type="password" placeholder="Password" class="input" />
+        <button class="btn">Iniciar</button>
+      </form>
+    </div>
+
+    <!-- Sign In -->
+    <div class="container__form container--signin">
+      <form action="#" class="form" id="form2">
+        <h2 class="form__title">Profesor</h2>
+        <input type="text" placeholder="User" class="input" />
+        <input type="password" placeholder="Password" class="input" />
+        <button class="btn">Iniciar</button>
+      </form>
+    </div>
+
+    <!-- Overlay -->
+    <div class="container__overlay">
+      <div class="overlay">
+        <div class="overlay__panel overlay--left">
+          <button class="btn" id="signIn">Profesor</button>
+        </div>
+        <div class="overlay__panel overlay--right">
+          <button class="btn" id="signUp">Adminstardor</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+>>>>>>> Stashed changes
 </body>
 
 </html>
