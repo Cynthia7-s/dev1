@@ -44,7 +44,7 @@ $routes->get('cero', 'Home::funcion_pro');
 //========================================================================================
 
 $routes->get('administracion_acceso', 'Usuario\Login::index', ['as' => 'administracion_acceso']);
-$routes->post('validar_usuario','Usuario::funcion',["as"=>'validar_usuario']);
+$routes->post('validar_usuario','Usuario\Login::existe_usuario',["as"=>'validar_usuario']);
 //=====================================================================================
 
 

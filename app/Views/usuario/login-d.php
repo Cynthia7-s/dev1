@@ -42,11 +42,10 @@
 									</p>
 								</div>
 			      	</div>
-                      <?= form_open('validar_usuario',["class" => ""] )?>
-                     
-                    
-							
-			      		<div class="form-group mb-3">
+                      <?= form_open('validar_usuario',["class" => ""] )?>	
+
+					  
+			      		<div class="form-group mt-3">
 			      			<label class="label" for="name">Username</label>
 			      			<input type="text" class="form-control" placeholder="Username" required>
                               <?php

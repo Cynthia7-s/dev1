@@ -21,6 +21,15 @@ class Login extends BaseController{
     public function index(){
         return $this->crear_vista($this->view,$this->cargar_datos());
     }//end index
+
+    //funcion en especifica
+    public function existe_usuario(){
+        dd("Validando credenciales.... :)");
+
+        $email=$this->request->getPost("");
+        $password=$this->request->getPost("");
+    }//end existe usuario
+
 }
 
 ?>
