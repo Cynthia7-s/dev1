@@ -4,12 +4,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>replit</title>
+  <title>Iniciar sesion</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
-  <!-- Enlace al archivo CSS -->
-  <link href="recursos_login/css/login.css" rel="stylesheet" type="text/css" /
-
+  <link href="/recursos_login/css/login.css" rel="stylesheet" type="text/css" />
 <script src="/recursos_login/js/login.js"></script>
+
+
 
 </head>
 
@@ -20,22 +20,20 @@
     <!-- Sign Up -->
     <div class="container__form container--signup">
       <form action="#" class="form" id="form1">
-        <h2 class="form__title">Sign Up</h2>
+        <h2 class="form__title">Adminstrador</h2>
         <input type="text" placeholder="User" class="input" />
-        <input type="email" placeholder="Email" class="input" />
         <input type="password" placeholder="Password" class="input" />
-        <button class="btn">Sign Up</button>
+        <button class="btn">Iniciar</button>
       </form>
     </div>
 
     <!-- Sign In -->
     <div class="container__form container--signin">
       <form action="#" class="form" id="form2">
-        <h2 class="form__title">Sign In</h2>
-        <input type="email" placeholder="Email" class="input" />
+        <h2 class="form__title">Profesor</h2>
+        <input type="text" placeholder="User" class="input" />
         <input type="password" placeholder="Password" class="input" />
-        <a href="#" class="link">Forgot your password?</a>
-        <button class="btn">Sign In</button>
+        <button class="btn">Iniciar</button>
       </form>
     </div>
 
@@ -43,10 +41,10 @@
     <div class="container__overlay">
       <div class="overlay">
         <div class="overlay__panel overlay--left">
-          <button class="btn" id="signIn">Sign In</button>
+          <button class="btn" id="signIn">Profesor</button>
         </div>
         <div class="overlay__panel overlay--right">
-          <button class="btn" id="signUp">Sign Up</button>
+          <button class="btn" id="signUp">Adminstardor</button>
         </div>
       </div>
     </div>
