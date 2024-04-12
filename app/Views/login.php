@@ -64,7 +64,7 @@
         $attributes=array(
             'type'=>'password',
             'class'=>'form-control',
-            'placeholder'=>'*********',
+            'placeholder'=>'***',
             'required'=>'true',
         );
         echo form_password($attributes);
