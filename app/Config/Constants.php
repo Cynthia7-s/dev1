@@ -94,3 +94,28 @@ define('RECURSOS_PANEL_IMG','recursos_panel/img/');
 
 //PORTAL CONSTANTS
 //define ('RECRUSOS_PANEL_PORTAL_', 'recursos_portal/');
+
+
+
+///constante Global 
+define('ESTATUS_HABILITADO', 1);
+define('ESTATUS_DESHABILITADO', -1);
+
+
+
+//CONSTANTES ALERTAS
+
+define('TOASTR_SUCCESS',50);
+define('TOASTR_WARNING',100);
+define('TOASTR_ERROR',150);
+define('TOASTR_INFO',0);
+
+
+///ADMINSTRABLE: TAREAS///
+define('TAREA_DASHBOARD',"tarea_dashboard");
+
+
+
+
+///ADMINSTRABLE: PAGINAS///
+

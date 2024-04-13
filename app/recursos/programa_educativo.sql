@@ -355,6 +355,15 @@ ALTER TABLE `usuario`
   ADD CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`idrol`) REFERENCES `rol` (`idrol`);
 COMMIT;
 
+
+
+SELECT usuario.*, rol.*
+FROM usuario
+INNER JOIN rol ON usuario.idrol = rol.idrol
+WHERE correo = "admin@gmail.com" AND
+password = SHA2("admin123", 0);
+
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

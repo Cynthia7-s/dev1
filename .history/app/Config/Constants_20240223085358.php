@@ -82,9 +82,9 @@ defined('EXIT__AUTO_MAX')      || define('EXIT__AUTO_MAX', 125); // highest auto
 // How to declare constant
 
 define("RECURSOS_LOGIN_JS","recursos_login/js/");
-define("RECURSOS_LOGIN_CSS", "recursos_login/css/")
+define("RECURSOS_LOGIN_CSS", "recursos_login/css/");
 define("RECURSOS_LOGIN_VENDOR", "recursos_login/vendor/");
-define("RECURSOS_LOGIN_FONTS", "recursos_login/fonts/");vendor
+define("RECURSOS_LOGIN_FONTS", "recursos_login/fonts/");
 define("DIR_IMG","images/");
 
 define('RECURSOs_PANEL_CSS','recurso_panel/css/');

@@ -37,7 +37,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
-$routes->('cero', 'Home::funcion_pro');
+$routes->get('cero', 'Home::funcion_pro');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

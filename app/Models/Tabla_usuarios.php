@@ -62,4 +62,22 @@ class Tabla_usuarios extends Model
                }
     }//end get_table
 
-}//end class
+    public function iniciar_sesion($correo="", $password="") {
+      if ($correo != NULL && $password != NULL) {
+          return $this
+              ->table($this->table)
+              ->select("usuario.idusuario, estatus_usuario, usuario.nombre, usuario.apellido_paterno,
+                  usuario.apellido_materno, usuario.sexo, usuario.correo,
+                  usuario.imagen_perfil, rol.idrol, rol.rol") // Coma faltante aquí
+              ->join("rol", "usuario.idrol=rol.idrol")
+              ->where("usuario.correo", $correo)
+              ->where("usuario.password", $password)
+              ->first();
+      } else {
+          return array();
+      }
+  }
+  
+    
+
+}

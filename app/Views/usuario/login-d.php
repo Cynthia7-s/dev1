@@ -1,7 +1,4 @@
-<?php
-//dd(base_url(RECURSOS_LOGIN_JS."/"))
-//base_url; : http://localhost:8080/
-?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -51,9 +48,11 @@
                               <?php
 
                                     $data = [
-                                        'type'  => 'text',
-                                        'placeholder'  => 'Username',
-                                        'class' => 'form-control',
+                                        'type'  => 'email',
+										'class' => 'form-control',
+                                        'placeholder'  => '',
+										'name'=>'correo_electronico',
+                                        
                                         'required' => true,
                                     ];
 
@@ -69,6 +68,8 @@
                                         'class'  => 'form-control',
                                         'type'  => 'password',
                                         'placeholder' => '*********',
+										
+										'name'=>'password',
                                         'required' => true,
                                         
                                     ];

@@ -33,24 +33,27 @@ class Dashboard extends BaseController
         $datos['breadcrumb_pagina'] = breadcrumb_panel($breadcrumb, $datos['nombre_pagina']);
 
         return $datos;
-    }
+    }//end cargar datos 
+
+
+
     private function crear_vista($nombre_vista = '', $contenido = array()){
         $contenido["menu_lateral"] = crear_menu_panel();
         return view($nombre_vista,$contenido);
-    }
+    }//end crear vista
 
-    public function index()
-    {
+
+    public function index(){
         return $this->crear_vista($this->view, $this->cargar_datos());
-    }
+    }//end index
 
-    public function funcion_pro()
-    {
+
+    public function funcion_pro(){
         return view('ejemplovista_pro');
-    }
+    }///end function pro
+    
 
-    public function login()
-    {
+    public function login(){
         return view('login');
-    }
+    }///end logim
 }

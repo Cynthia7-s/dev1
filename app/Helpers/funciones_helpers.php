@@ -27,5 +27,16 @@ function breadcrumb_panel($breadcrumb = array(), $nombre_breadcrumb = ''){
     //dd($html);
   return $html;
 }
+
+
+// app/Helpers/helpers.php
+
+if (!function_exists('crear_mensaje')) {
+    function crear_mensaje($mensaje, $tipo, $toastr_type) {
+        // Lógica para crear el mensaje
+        // Por ejemplo, mostrar una alerta, guardar en una sesión, etc.
+    }
+}
+
 //
                // 

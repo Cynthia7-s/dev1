@@ -1,49 +1,87 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Iniciar sesion</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-  <link href="/recursos_login/css/login.css" rel="stylesheet" type="text/css" />
-<script src="/recursos_login/js/login.js"></script>
+    <title>Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?= base_url(RECURSOS_LOGIN_CSS.'style.css') ?>">
+
 </head>
 <body>
-  <div class="container right-panel-active">
-    <!-- Administrador-->
-    <div class="container__form container--signup">
-      <form action="#" class="form" id="form1">
-        <h2 class="form__title">Adminstrador</h2>
-        <input type="text" placeholder="User" class="input" />
-        <input type="password" placeholder="Password" class="input" />
-        <button class="btn">Iniciar</button>
-      </form>
-    </div>
-    <!-- Profesor -->
-    <div class="container__form container--signin">
-      <form action="#" class="form" id="form2">
-        <h2 class="form__title">Profesor</h2>
-        <input type="text" placeholder="User" class="input" />
-        <input type="password" placeholder="Password" class="input" />
-        <button class="btn">Iniciar</button>
-      </form>
-    </div>
-    <!-- Overlay -->
-    <div class="container__overlay">
-      <div class="overlay">
-        <div class="overlay__panel overlay--left">
-          <button class="btn" id="signIn">Profesor</button>
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center mb-5">
+                <h2 class="heading-section">Login</h2>
+            </div>
         </div>
-        <div class="overlay__panel overlay--right">
-          <button class="btn" id="signUp">Adminstardor</button>
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-10">
+                <div class="wrap d-md-flex">
+                    <div class="login-wrap p-4 p-md-5">
+                        <div class="d-flex">
+                            <div class="w-100">
+                                <h3 class="mb-4">Inicio</h3>
+                            </div>
+                        </div>
+                        <?= form_open('validar_usuario', ["class" => ""]) ?>
+
+                        <div class="form-group mt-3">
+                            <label class="label" for="name">Correo electrónico</label>
+                            <?php
+                            $data = [
+                                'type'  => 'email',
+                                'class' => 'form-control',
+                                'placeholder'  => '',
+                                'name'=>'correo_electronico',
+                                'required' => true,
+                            ];
+                            echo form_input($data);
+                            ?>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label class="label" for="password">Contraseña</label>
+                            <?php
+                            $data = [
+                                'class'  => 'form-control',
+                                'type'  => 'password',
+                                'placeholder' => '*********',
+                                'name'=>'password',
+                                'required' => true,
+                            ];
+                            echo form_password($data);
+                            ?>
+                        </div>
+                        <div class="form-group">
+                            <?php
+                            echo form_submit('btn-enviar', "INICIAR SESIÓN", ['class' => 'form-control btn btn-primary rounded submit px-3'])
+                            ?>
+                        </div>
+                        <div class="form-group d-md-flex">
+                            <div class="w-50 text-left">
+                                <label class="checkbox-wrap checkbox-primary mb-0">Recordarme
+                                    <input type="checkbox" checked>
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="w-50 text-md-right">
+                                <a href="#">¿Olvidó su contraseña?</a>
+                            </div>
+                        </div>
+                        <?= form_close()?>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-  <script src="script.js"></script>
+</section>
+
+<script src="<?php echo base_url(RECURSOS_LOGIN_JS.'/jquery.min.js'); ?>"></script>
+<script src="<?= base_url(RECURSOS_LOGIN_JS.'/popper.js') ?>"></script>
+<script src="<?= base_url(RECURSOS_LOGIN_JS.'bootstrap.min.js') ?> "></script>
+<script src="<?= base_url(RECURSOS_LOGIN_JS.'main.js') ?>"></script>
 </body>
-
 </html>
-
-
