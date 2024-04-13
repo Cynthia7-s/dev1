@@ -1,112 +1,86 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-  	<title>Login 04</title>
+<head>
+    <title>Login</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?= base_url(RECURSOS_LOGIN_CSS.'style.css') ?>">
 
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	
-	<link rel="stylesheet" href=<?php echo base_url(RECURSOS_LOGIN_CSS. '/login.css')?>> 
-	<link href="style.css" rel="stylesheet" type="text/css" />
-<script src="/recursos_login/js/login.js"></script>
-	</head>
-	<body>
-	<section class="ftco-section">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section">Login #04</h2>
-				</div>
-			</div>
-			<div class="row justify-content-center">
-				<div class="col-md-12 col-lg-10">
-					<div class="wrap d-md-flex">
-						<div class="img" style="background-image: url('<?= base_url(DIR_IMG. '/bg-1.jpg') ?>');">
-			      </div>
-						<div class="login-wrap p-4 p-md-5">
-			      	<div class="d-flex">
-			      		<div class="w-100">
-			      			<h3 class="mb-4">Sign In</h3>
-			      		</div>
-								<div class="w-100">
-									<p class="social-media d-flex justify-content-end">
-										<a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a>
-										<a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a>
-									</p>
-								</div>
-			      	</div>
-                      <?= form_open('validar_usuario',["class" => ""] )?>	
+</head>
+<body>
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center mb-5">
+             <!--   <h2 class="heading-section">Login</h2>-->
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-10">
+                <div class="wrap d-md-flex">
+                    <div class="login-wrap p-4 p-md-5">
+                        <div class="d-flex">
+                            <div class="w-100">
+                                <h3 class="mb-4">Inicio</h3>
+                            </div>
+                        </div>
+                        <?= form_open('validar_usuario', ["class" => ""]) ?>
+                        <div class="form-group mt-3">
+                            <label class="label" for="name">Correo electrónico</label>
+                            <?php
+                            $data = [
+                                'type'  => 'email',
+                                'class' => 'form-control',
+                                'placeholder'  => '',
+                                'name'=>'correo_electronico',
+                                'required' => true,
+                            ];
+                            echo form_input($data);
+                            ?>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label class="label" for="password">Contraseña</label>
+                            <?php
+                            $data = [
+                                'class'  => 'form-control',
+                                'type'  => 'password',
+                                'placeholder' => '*********',
+                                'name'=>'password',
+                                'required' => true,
+                            ];
+                            echo form_password($data);
+                            ?>
+                        </div>
+                        <div class="form-group">
+                            <?php
+                            echo form_submit('btn-enviar', "INICIAR SESIÓN", ['class' => 'form-control btn btn-primary rounded submit px-3'])
+                            ?>
+                        </div>
+                        <div class="form-group d-md-flex">
+                            <div class="w-50 text-left">
+                                <label class="checkbox-wrap checkbox-primary mb-0">Recordarme
+                                    <input type="checkbox" checked>
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="w-50 text-md-right">
+                                <a href="#">¿Olvidó su contraseña?</a>
+                            </div>
+                        </div>
+                        <?= form_close()?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-					  
-			      		<div class="form-group mt-3">
-			      			<label class="label" for="name">Username</label>
-			      			<input type="text" class="form-control" placeholder="Username" required>
-                              <?php
-
-                                    $data = [
-                                        'type'  => 'email',
-										'class' => 'form-control',
-                                        'placeholder'  => '',
-										'name'=>'correo_electronico',
-                                        
-                                        'required' => true,
-                                    ];
-
-                                   echo form_input($data);
-                                   ?>
-			      		</div>
-		            <div class="form-group mb-3">
-		            	<label class="label" for="password">Password</label>
-		              <input type="password" class="form-control" placeholder="Password" required>
-                      <?php
-
-                                    $data = [
-                                        'class'  => 'form-control',
-                                        'type'  => 'password',
-                                        'placeholder' => '*********',
-										
-										'name'=>'password',
-                                        'required' => true,
-                                        
-                                    ];
-
-                                   echo form_password($data);
-                                   ?>
-		            </div>
-		            <div class="form-group">
-		            	<button type="submit" class="form-control btn btn-primary rounded submit px-3">Sign In</button>
-                        <?php
-                        echo form_submit('btn-enviar', "INICIAR SESION", ['class' => 'form-control btn btn-primary rounded submit px-3'])
-                        ?>
-		            </div>
-		            <div class="form-group d-md-flex">
-		            	<div class="w-50 text-left">
-			            	<label class="checkbox-wrap checkbox-primary mb-0">Remember Me
-									  <input type="checkbox" checked>
-									  <span class="checkmark"></span>
-										</label>
-									</div>
-									<div class="w-50 text-md-right">
-										<a href="#">Forgot Password</a>
-									</div>
-		            </div>
-                    <?= form_close()?>
-		          <p class="text-center">Not a member? <a data-toggle="tab" href="#signup">Sign Up</a></p>
-		        </div>
-		      </div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<script src="<?php echo base_url(RECURSOS_LOGIN_JS.'/jquery.min.js'); ?>"></script>
-  <script src="<?= base_url(RECURSOS_LOGIN_JS.'/popper.js') ?>"></script>
-  <script src="<?= base_url(RECURSOS_LOGIN_JS.'js/bootstrap.min.js') ?> "></script>
-  <script src="<?= base_url(RECURSOS_LOGIN_JS.'js/main.js') ?>"></script>
-
-	</body>
+<script src="<?php echo base_url(RECURSOS_LOGIN_JS.'/jquery.min.js'); ?>"></script>
+<script src="<?= base_url(RECURSOS_LOGIN_JS.'/popper.js') ?>"></script>
+<script src="<?= base_url(RECURSOS_LOGIN_JS.'bootstrap.min.js') ?> "></script>
+<script src="<?= base_url(RECURSOS_LOGIN_JS.'main.js') ?>"></script>
+</body>
 </html>

@@ -42,7 +42,7 @@ CREATE TABLE `usuario` (
   `apellido_paterno` varchar(45) NOT NULL,
   `apellido_materno` varchar(45) NULL,
   `sexo` tinyint(1) NOT NULL COMMENT '0: Masculino, 1: Femenino',
-  `correo` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
   `password` varchar(64) NOT NULL,
   `imagen_perfil` varchar(100) DEFAULT NULL,
   `idrol` int(3) DEFAULT NULL,
@@ -53,7 +53,7 @@ CREATE TABLE `usuario` (
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`nombre`, `apellido_paterno`, `apellido_materno`, `sexo`, `correo`, `password`, `imagen_perfil`, `idrol`) VALUES
+INSERT INTO `usuario` (`nombre`, `apellido_paterno`, `apellido_materno`, `sexo`, `email`, `password`, `imagen_perfil`, `idrol`) VALUES
 ('Adminstrador', 'Adminstrador','',0, 'admin@gmail.com', SHA2('admin123',0),NULL, 745),
 ('Operador','Operador','', 1, 'operador@gmail.com', SHA2('operador123',0), NULL,125);
 
@@ -71,7 +71,7 @@ CREATE TABLE `alumno` (
   `grado` varchar(20) NOT NULL,
   `grupo` char(1) NOT NULL,
   `idusuario` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB;
 
 -- --------------------------------------------------------
 
@@ -84,7 +84,7 @@ CREATE TABLE `asignatura` (
   `asignatura` varchar(100) NOT NULL,
   `acronimo` varchar(45) NOT NULL,
   `creditos` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB;
 
 -- --------------------------------------------------------
 
@@ -101,7 +101,7 @@ CREATE TABLE `calificaciones` (
   `calificacion_final` varchar(45) NOT NULL,
   `idlista_alumnos` int(11) DEFAULT NULL,
   `idperiodo` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB;
 
 -- --------------------------------------------------------
 
@@ -119,7 +119,7 @@ CREATE TABLE `carga_horaria` (
   `ponderacion_parcial_b` int(11) DEFAULT NULL,
   `ponderacion_parcial_c` int(11) NOT NULL,
   `ponderacion_parcial_d` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB;
 
 -- --------------------------------------------------------
 
@@ -133,7 +133,7 @@ CREATE TABLE `docente` (
   `grado_estudios` varchar(100) NOT NULL,
   `idusuario` int(11) DEFAULT NULL,
   `idpe` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB;
 
 -- --------------------------------------------------------
 
@@ -150,7 +150,7 @@ CREATE TABLE `lista_alumnos` (
   `tipo_asistencia` tinyint(1) NOT NULL,
   `fecha_asistencia` date NOT NULL,
   `estatus_alumno` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB;
 
 -- --------------------------------------------------------
 
@@ -165,7 +165,7 @@ CREATE TABLE `periodo` (
   `fecha_inicio` date DEFAULT NULL,
   `fecha_fin` varchar(45) NOT NULL,
   `estatus` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB;
 
 -- --------------------------------------------------------
 
@@ -178,7 +178,7 @@ CREATE TABLE `programa_educativo` (
   `programa_educativo` varchar(100) NOT NULL,
   `acronimo` varchar(45) NOT NULL,
   `logo` varchar(45) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB;
 
 
 --
@@ -360,7 +360,7 @@ COMMIT;
 SELECT usuario.*, rol.*
 FROM usuario
 INNER JOIN rol ON usuario.idrol = rol.idrol
-WHERE correo = "admin@gmail.com" AND
+WHERE email = "admin@gmail.com" AND
 password = SHA2("admin123", 0);
 
 

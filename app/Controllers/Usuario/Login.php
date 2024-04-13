@@ -62,7 +62,7 @@ class Login extends BaseController{
 
             crear_mensaje("Hola de nuevo " . $session->nombre . " al panel de administración", "¡Bienvenido!", TOASTR_INFO);
             return redirect()->to(route_to("administracion_dashboard"));
-
+ 
           }
           else{
             crear_mensaje("El usuario y/o contraseñas son incorrectas", "Error", TOASTR_ERROR);

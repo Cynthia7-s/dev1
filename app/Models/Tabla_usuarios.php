@@ -12,7 +12,7 @@ class Tabla_usuarios extends Model
     protected $returnType = ''; 
     protected $allowedFields = [
         'estatus_usuario','idusuario','nombre', 'apellido_paterno','apellido_materno',
-         'sexo','correo','password','imagen_perfil', 'idrol'
+         'sexo','email','password','imagen_perfil', 'idrol'
     ]; 
 
     //====================================
@@ -62,15 +62,15 @@ class Tabla_usuarios extends Model
                }
     }//end get_table
 
-    public function iniciar_sesion($correo="", $password="") {
-      if ($correo != NULL && $password != NULL) {
+    public function iniciar_sesion($email="", $password="") {
+      if ($email != NULL && $password != NULL) {
           return $this
               ->table($this->table)
               ->select("usuario.idusuario, estatus_usuario, usuario.nombre, usuario.apellido_paterno,
-                  usuario.apellido_materno, usuario.sexo, usuario.correo,
+                  usuario.apellido_materno, usuario.sexo, usuario.email,
                   usuario.imagen_perfil, rol.idrol, rol.rol") // Coma faltante aquí
               ->join("rol", "usuario.idrol=rol.idrol")
-              ->where("usuario.correo", $correo)
+              ->where("usuario.email", $email)
               ->where("usuario.password", $password)
               ->first();
       } else {

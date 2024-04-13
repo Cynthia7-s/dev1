@@ -15,7 +15,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6 text-center mb-5">
-                <h2 class="heading-section">Login</h2>
+               <!-- <h2 class="heading-section">Login</h2>-->
             </div>
         </div>
         <div class="row justify-content-center">
@@ -30,7 +30,7 @@
                         <?= form_open('validar_usuario', ["class" => ""]) ?>
 
                         <div class="form-group mt-3">
-                            <label class="label" for="name">Correo electrónico</label>
+                            <label class="label" for="name">email</label>
                             <?php
                             $data = [
                                 'type'  => 'email',
@@ -43,7 +43,7 @@
                             ?>
                         </div>
                         <div class="form-group mb-3">
-                            <label class="label" for="password">Contraseña</label>
+                            <label class="label" for="password">password</label>
                             <?php
                             $data = [
                                 'class'  => 'form-control',
