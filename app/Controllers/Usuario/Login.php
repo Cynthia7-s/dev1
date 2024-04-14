@@ -3,7 +3,10 @@
 namespace App\Controllers\Usuarios;
 use App\Controllers\BaseController;
 
-class Login extends BaseController{
+use const App\Constants\ESTATUS_DESHABILITADO;
+use const App\Constants\TOASTR_SUCCESS;
+
+class Login extends BaseController {
 
     private $view='usuario/login-d';
 
@@ -61,7 +64,7 @@ class Login extends BaseController{
 
 
             crear_mensaje("Hola de nuevo " . $session->nombre . " al panel de administración", "¡Bienvenido!", TOASTR_INFO);
-            return redirect()->to(route_to("administracion_dashboard"));
+            return redirect()->to(route_to("administracion_dashbord"));
  
           }
           else{

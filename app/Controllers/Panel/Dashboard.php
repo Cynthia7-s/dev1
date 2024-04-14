@@ -8,15 +8,37 @@ class Dashboard extends BaseController
 {
     private $view ='panel/dashboard';
 
+    private $session=NULL;
+    private $permiso=TRUE;
+    //contructor
+   public function __construct(){
+    //instancia de la variable de sesion 
+    $this->session=session(); 
+   }
+
+
+
+
     private function cargar_datos(){
         $datos = array();
 
         // $datos['titulo_pagina'] = 'Dashboard';
         // $datos['Mensaje'] = '';
         // Informacion general
-        $datos['titulo_pagina'] = 'Dashboard | CI4Base';
-        $datos['nombre_pagina'] = 'Ejemplo';
-        $datos['nombre_usuario'] = 'Dashboard';
+        $datos['nombre_pagina'] = 'Dashboard | CI4Base';
+        $datos['titulo_pagina'] = 'Dashboard';
+
+        //--------------------------------------
+        //INFORMACION DE INICIO SE SESION
+        //--------------------------------------
+   $datos["nombre_completo_usuario"]=$this->session->nombre_completo;
+   $datos["nombre"]=$this->session->nombre;
+   $datos["email"]=$this->session->email;
+   //RECURSOS_PANEL_IMG_PROFILES_USER','imagenes/profile_user/
+   $datos["imagen_perfil"]=($this->session->imagen_perfil==NULL) 
+                              ? (($this->session->sexo !== MASCULINO ) ? 'icon-woman.png' : 'icon-man.png' )
+                              : $this->session->imagen_perfil ;
+
 
         //Breadcrumb
         $breadcrumb = array(

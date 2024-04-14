@@ -90,12 +90,14 @@ define("DIR_IMG","recursos_panel/img/");
 define('RECURSOS_PANEL_CSS','recursos_panel/css/');
 define('RECURSOS_PANEL_JS','recursos_panel/js/');
 define('RECURSOS_PANEL_PLUGINS','recursos_panel/plugins/');
-define('RECURSOS_PANEL_IMG','recursos_panel/img/');
+define('RECURSOS_PANEL_IMG_PROFILES_USER','imagenes/profile_user/');
 
 //PORTAL CONSTANTS
 //define ('RECRUSOS_PANEL_PORTAL_', 'recursos_portal/');
 
-
+//  CONSTANTES PARA EL SEXO
+define('MASCULINO',0);
+define('FEMENINO',1);
 
 ///constante Global 
 define('ESTATUS_HABILITADO', 1);
