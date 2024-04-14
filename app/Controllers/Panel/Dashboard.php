@@ -13,11 +13,17 @@ class Dashboard extends BaseController
     //contructor
    public function __construct(){
     //instancia de la variable de sesion 
-    $this->session=session(); 
+    $this->session=session();
+    
+    //instancia de permisos helper
+    helper("permisos_roles_helper");
+               if (!acceso_usuario(TAREA_DASHBOARD, $this->session->rol_actual)) { 
+            
+                $this->permiso=FALSE;
+          
+     }//END 
+       $this->session->tarea_actual =TAREA_DASHBOARD;
    }
-
-
-
 
     private function cargar_datos(){
         $datos = array();
@@ -34,12 +40,9 @@ class Dashboard extends BaseController
    $datos["nombre_completo_usuario"]=$this->session->nombre_completo;
    $datos["nombre"]=$this->session->nombre;
    $datos["email"]=$this->session->email;
-   //RECURSOS_PANEL_IMG_PROFILES_USER','imagenes/profile_user/
    $datos["imagen_perfil"]=($this->session->imagen_perfil==NULL) 
                               ? (($this->session->sexo !== MASCULINO ) ? 'icon-woman.png' : 'icon-man.png' )
                               : $this->session->imagen_perfil ;
-
-
         //Breadcrumb
         $breadcrumb = array(
             array(
@@ -60,13 +63,21 @@ class Dashboard extends BaseController
 
 
     private function crear_vista($nombre_vista = '', $contenido = array()){
-        $contenido["menu_lateral"] = crear_menu_panel();
+        $contenido["menu_lateral"] = crear_menu_panel($this->session->tarea_actual);
         return view($nombre_vista,$contenido);
     }//end crear vista
 
 
     public function index(){
+       if ($this->permiso) {
         return $this->crear_vista($this->view, $this->cargar_datos());
+
+        # code...
+           }else{
+            crear_mensaje("No tienes permisos para acceder a este moduli, contacte al Administrador",
+            "Oppss!",TOASTR_ERROR);
+            return redirect()->to(route_to("administracion_acceso"));
+           }
     }//end index
 
 
