@@ -14,7 +14,7 @@
      *   [Opción C2]
      */
 
-     function configurar_menu_panel(){
+     function configurar_menu_panel($tarea_actual='', $rol_actual = 0){
          //Permite aalmacenar todas las opciones dentro del menu 
          $menu = array();
          //Permite identificar las caracteristicas de la opcion
@@ -24,12 +24,23 @@
 
          //TAREA dashboard
          $menu_opcion = array();
-         $menu_opcion['is_active'] = FALSE;
-         $menu_opcion['href'] = route_to("dashboard");
+         $menu_opcion['is_active'] = ($tarea_actual==TAREA_DASHBOARD) ? TRUE : FALSE;
+         $menu_opcion['href'] = route_to("administracion_dashboard");
          $menu_opcion['text'] = 'Dashboard';
          $menu_opcion['icon'] = 'fa fa-area-chart';
              $menu_opcion['submenu'] = array();
          $menu['dashboard'] = $menu_opcion;
+
+         if($rol_actual == ROL_ADMINISTRADOR["clave"]){
+            //TAREA usuario
+            $menu_opcion = array();
+         $menu_opcion['is_active'] = ($tarea_actual==TAREA_USUARIO) ? TRUE : FALSE;
+         $menu_opcion['href'] = route_to("administracion_usuario");
+         $menu_opcion['text'] = 'Usuarios';
+         $menu_opcion['icon'] = 'fa fa-desktop';
+             $menu_opcion['submenu'] = array();
+         $menu['usuario'] = $menu_opcion;
+         }//Tarea_usuarios
 
         //EJEMPLO CON OPCIONES
         $menu_opcion = array();
@@ -37,11 +48,11 @@
         $menu_opcion['href'] = "#";
         $menu_opcion['text'] = 'Opcion B';
         $menu_opcion['icon'] = 'fa fa-battery-full';
-        
-            $menu_opcion['submenu'] = array();
+        $menu_opcion['submenu'] = array();
+
                 $menu_sub_opcion = array();
                 $menu_sub_opcion['is_active'] = FALSE;
-                $menu_sub_opcion['href'] = route_to('dashboard');
+                $menu_sub_opcion['href'] = route_to('administracion_dashboard');
                 $menu_sub_opcion['text'] = 'Opción B1';
                 $menu_sub_opcion['icon'] = 'fa fa-battery-three-quarters';
         $menu_opcion['submenu'] ['opcionb1']= $menu_sub_opcion;
@@ -60,8 +71,8 @@
     return $menu;
  }//end configurar_menu_panel
 
-     function crear_menu_panel(){
-        $menu = configurar_menu_panel();
+        function crear_menu_panel($tarea_actual=''){
+        $menu = configurar_menu_panel($tarea_actual);
        // dd($menu);
         $html = '';
         $html.='

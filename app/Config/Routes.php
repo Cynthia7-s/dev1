@@ -36,9 +36,26 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+$routes->get('practica','Home::practica_uno',['as'=>'']);
 
 // View Example
 $routes->get('cero', 'Home::funcion_pro');
+//======================================================================================
+//RUTAS DE LOGIN 
+//========================================================================================
+
+$routes->get('administracion_acceso', 'Usuario/Login::index', ['as' => 'administracion_acceso']);
+$routes->post('validar_usuario','Usuario/Login::existe_usuario',["as"=>'validar_usuario']);
+$routes->get('salir_administracion_acceso','Usuario/Logout::index',['as'=>'salir_administracion_acceso']);
+
+//=====================================================================================
+
+//========================================================================================
+//=======================================DASHBOARD========================================
+$routes->get('administracion_dashbord','Panel/Dashboard::index',["as"=>'administracion_dashbord']);
+
+//
+$routes->get('administracion_usuario','Panel/Usuario::index',["as"=>'administracion_usuario']);
 
 // Login View Route
 $routes->get('login', 'Home::login');
