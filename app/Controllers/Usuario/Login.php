@@ -3,12 +3,12 @@
 namespace App\Controllers\Usuarios;
 use App\Controllers\BaseController;
 
-use const App\Constants\ESTATUS_DESHABILITADO;
-use const App\Constants\TOASTR_SUCCESS;
+//use const App\Constants\ESTATUS_DESHABILITADO;
+//use const App\Constants\TOASTR_SUCCESS;
 
 class Login extends BaseController {
 
-    private $view='usuario/login-d';
+    private $view='usuario/login';
 
     private function cargar_datos(){
         $datos=array();

@@ -35,8 +35,8 @@ class BaseController extends Controller
      *
      * @var array
      */
-    protected $helpers = ['form', 'funciones_helpers', 'menu_lateral_panel'];
-
+    protected $helpers = ['form','funciones_helpers', 'menu_lateral_panel_helper'];
+ 
     /**
      * Constructor.
      */

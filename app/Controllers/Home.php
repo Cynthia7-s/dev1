@@ -14,8 +14,8 @@ class Home extends BaseController
         return view('ejemplovista_pro');
     }
 
-    public function login()
+    public function Login()
     {
-        return view('login');
+        return view('Login');
     }
 }

@@ -9,7 +9,14 @@ class Acceso extends BaseController
         return view('welcome_message');
     }
 
-    public function funcion_pro(){
+    public function funcion_pro()
+    {
         return view('xd');
+    }
+
+    public function Login()
+    {
+        // Redireccionar al usuario a la página de inicio de sesión
+        return redirect()->to('Usuarios/Login');
     }
 }

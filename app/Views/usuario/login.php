@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Login</title>
+    <title>Inicio</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -30,12 +30,13 @@
                         <?= form_open('validar_usuario', ["class" => ""]) ?>
 
                         <div class="form-group mt-3">
-                            <label class="label" for="name">email</label>
+                            <label class="label" for="email">Correo electrónico</label>
                             <?php
                             $data = [
                                 'type'  => 'email',
                                 'class' => 'form-control',
                                 'placeholder'  => '',
+                                'id' => 'email', // Añadido el atributo id
                                 'name'=>'correo_electronico',
                                 'required' => true,
                             ];
@@ -43,12 +44,13 @@
                             ?>
                         </div>
                         <div class="form-group mb-3">
-                            <label class="label" for="password">password</label>
+                            <label class="label" for="password">Contraseña</label>
                             <?php
                             $data = [
                                 'class'  => 'form-control',
                                 'type'  => 'password',
                                 'placeholder' => '*********',
+                                'id' => 'password', // Añadido el atributo id
                                 'name'=>'password',
                                 'required' => true,
                             ];
