@@ -13,5 +13,9 @@
 <!-- Cargar el contenido la plantilla -->
 
 <?= $this->section('js') ?>
+<<<<<<< Updated upstream
 //<script src="<?= base_url(RECURSOS_PANEL_JS.'pages/dashboard.js')?>"></script>
+=======
+<script src="<?= base_url(RECURSOS_PANEL_JS.'pages/dashboard.js')?>"></script>
+>>>>>>> Stashed changes
 <?= $this->endSection()?>
