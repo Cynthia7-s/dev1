@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Controllers\Usuarios;
+namespace App\Controllers\Usuario;
 use App\Controllers\BaseController;
-
 //use const App\Constants\ESTATUS_DESHABILITADO;
 //use const App\Constants\TOASTR_SUCCESS;
 
@@ -47,7 +46,7 @@ class Login extends BaseController {
                 crear_mensaje("Este usuario ha sido deshabilitado. Comunícate con el Administrador", "Error", TOASTR_ERROR);
                 return redirect()->to(route_to("administracion_acceso"));
             }
-    
+
             // Variables de sesión
             $session = session();
             $session->set("session_iniciada", TRUE);
@@ -59,13 +58,13 @@ class Login extends BaseController {
             $session->set("imagen_perfil", $usuarios->imagen_perfil);
             $session->set("rol_actual", $usuarios->idrol);
             $session->set("tarea_actual", TAREA_DASHBOARD);
-    
+
            // d($session);
 
 
             crear_mensaje("Hola de nuevo " . $session->nombre . " al panel de administración", "¡Bienvenido!", TOASTR_INFO);
             return redirect()->to(route_to("administracion_dashbord"));
- 
+
           }
           else{
             crear_mensaje("El usuario y/o contraseñas son incorrectas", "Error", TOASTR_ERROR);
@@ -73,4 +72,3 @@ class Login extends BaseController {
           } 
     }
 }
-?>
